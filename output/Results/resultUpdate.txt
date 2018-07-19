@@ -1,0 +1,7 @@
+SQLServer Update
+28 18 10 13 15 13 3 3 3 3 
+average: 10
+
+MongoDB Update
+990 928 1032 912 1083 906 821 678 725 859 
+average: 893

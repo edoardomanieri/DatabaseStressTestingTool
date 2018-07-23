@@ -1,7 +1,0 @@
-SQLServer Update
-4 2 
-average: 3
-
-MongoDB Update
-297 335 
-average: 316

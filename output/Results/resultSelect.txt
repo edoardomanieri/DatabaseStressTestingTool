@@ -1,7 +1,0 @@
-SQLServer Select
-3 1 
-average: 2
-
-MongoDB Find
-12 15 
-average: 13

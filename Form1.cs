@@ -27,7 +27,7 @@ namespace StressTest
         {
             List<string> partCodes = new List<string>();
             SqlConnection conn = new SqlConnection();
-            conn.ConnectionString = "Data Source=EDOARDO;Initial Catalog=WIP;Integrated Security=True";
+            conn.ConnectionString = sqlConnectionStringBox.Text;
             conn.Open();
             string commandString = "Select top (1000) [PartCode] From[WIP_Test].[dbo].[WipHeaderHistory]";
             SqlCommand command = new SqlCommand(commandString, conn);
@@ -62,6 +62,7 @@ namespace StressTest
                 ArrayMongoProcessStartInfo[i].Arguments = arguments;
                 // ArraySQLProcessStartInfo[i] = new ProcessStartInfo(@"C:\Users\Edoardo\source\repos\SQLServerThread\SQLServerThread\bin\Debug\SQLServerThread.exe");
                 ArraySQLProcessStartInfo[i] = new ProcessStartInfo(@"..\..\res\SQLServerThread\SQLServerThread\bin\Debug\SQLServerThread.exe");
+                arguments = arguments + " \"" + sqlConnectionStringBox.Text + "\"";
                 ArraySQLProcessStartInfo[i].Arguments = arguments;
                 ArrayMongoProcess[i].StartInfo = ArrayMongoProcessStartInfo[i];
                 ArraySQLProcess[i].StartInfo = ArraySQLProcessStartInfo[i];
@@ -98,5 +99,6 @@ namespace StressTest
             Process.Start(@"..\..\output\Results\resultSelect.txt");
             Process.Start(@"..\..\output\Results\resultUpdate.txt");
         }
+
     }
 }

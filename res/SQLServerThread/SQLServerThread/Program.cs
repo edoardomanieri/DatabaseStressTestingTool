@@ -13,7 +13,7 @@ namespace SQLServerThread
         static void Main(string[] args)
         {
             SqlConnection conn = new SqlConnection();
-            conn.ConnectionString = "Data Source=EDOARDO;Initial Catalog=WIP;Integrated Security=True";
+            conn.ConnectionString = args[2];
             conn.Open();
             string selectString = "Select PartUniqueID From[WIP_Test].[dbo].[WipHeaderHistory] Where[PartCode] = '" + args[0] + "' ;";
             string updateString = "update [WIP_Test].[dbo].[WipHeaderHistory] set [NextStationCode] = 90 where [PartCode] = '" + args[0] + "' ;";

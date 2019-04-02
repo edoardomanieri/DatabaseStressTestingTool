@@ -1,17 +1,15 @@
-# StressTestC--tirocinio
+# DatabaseStressTestingTool 
 
-Programma di StressTest per la tabella WipHeaderHistory del database WIP.
-Lancia in parallelo un numero a scelta di processi che interrogano MongoDB e SQLServer simulando delle stazioni.
+StressTest program for the WipHeaderHistory table of the WIP database.
+It launches multiple processes in parallel that query MongoDB and SQLServer, simulating stations.
 
-Il server di MongoDB deve girare in locale sulla porta 27017(default).
-la connection string per SQLServer è editabile e va messa seguendo il modello di quella presente a default.
+The MongoDB server must run locally on port 27017 (default).
+the connection string for SQLServer is editable and must be set following the default model.
 
-Database di SQLServer -> WIP_Test [ per editarlo modificare il metodo main della classe Program che si trova in res\SQLServerThread\SQLServerThread e il metodo button1_Click della classe Form1 ]
-Database di MongoDB -> WIP [ per editarlo modificare il metodo main della classe Program che si trova in res\MongoThread\MongoThread ]
+SQLServer Database -> WIP_Test [to edit it modify the main method of the Program class which is in res SQLServerThread SQLServerThread and the method button1_Click of class Form1]
+MongoDB Database -> WIP [to edit it modify the main method of the Program class which is in res MongoThread MongoThread]
 
-Per cambiare le query eseguite su SQLServer modificare il metodo main della classe Program che si trova in res\SQLServerThread\SQLServerThread.
-Per cambiare le query eseguite su MongoDB modificare il metodo main della classe Program che si trova in res\MongoThread\MongoThread. 
+To change the queries executed on SQLServer modify the main method of the Program class which is in res\SQLServerThread\SQLServerThread
+To change the queries executed on MongoDB modify the main method of the Program class which is in res\MongoThread\MongoThread.
 
-le tabelle devono essere ovviamente popolate.
-
-Premendo il tasto getResults si ottiene un file di testo con i tempi di risposta.
+Pressing the getResults button produces a text file with the average response times for each type of query for each DBMS.
